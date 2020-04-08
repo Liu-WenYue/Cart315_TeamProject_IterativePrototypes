@@ -960,7 +960,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1722180555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e374822f94e64975b8de0aad1d0379b, type: 3}
+  m_Script: {fileID: 11500000, guid: 331883feaa9efbc4ea9490ba153605c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1722180558
@@ -1005,7 +1005,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1722180559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722180557}
+        m_MethodName: quitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1722180559
 MonoBehaviour:
   m_ObjectHideFlags: 0
