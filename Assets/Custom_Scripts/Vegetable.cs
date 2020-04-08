@@ -112,7 +112,7 @@ public class Vegetable : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         Debug.Log("Counted 5 seconds");
-        temp.speed = 2;
+        temp.speed = 4;
 
         Destroy(this.gameObject); 
     }
