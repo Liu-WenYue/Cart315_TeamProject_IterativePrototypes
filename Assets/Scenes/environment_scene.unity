@@ -4253,6 +4253,16 @@ PrefabInstance:
       propertyPath: enemySpeed
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2660384928159524419, guid: 3717d65d0f842d0408ed07b0743bf6e6,
+        type: 3}
+      propertyPath: biteSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 98407a08e5ed6b840a8734e8170b0686, type: 3}
+    - target: {fileID: 2660384928159524419, guid: 3717d65d0f842d0408ed07b0743bf6e6,
+        type: 3}
+      propertyPath: growlSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 24e0ab7d9bd294f4084f0c403e7eed33, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3717d65d0f842d0408ed07b0743bf6e6, type: 3}
 --- !u!1 &1795548238 stripped
@@ -4291,7 +4301,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 98407a08e5ed6b840a8734e8170b0686, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
