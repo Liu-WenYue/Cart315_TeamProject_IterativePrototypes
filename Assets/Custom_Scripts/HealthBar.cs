@@ -11,15 +11,35 @@ public class HealthBar : MonoBehaviour
     //public GameObject red;
 
 
-    private float hitpoint = 100f;
+    private float hitpoint = 20f;
     private float maxHitpoint = 100f;
+
+    //[SerializeField]private AudioClip lowSound;
+    //private AudioSource health_audio; 
+    
+    //public AudioSource[] player_audio = new AudioSource[2]; 
 
 
     private void Start()
     {
         UpdateHealthBar();
         LowHealth.enabled = false;
+
+        //health_audio = GetComponent<AudioSource>();
     }
+
+
+    /*
+    IEnumerator PlayLowHealthAudio()
+    {
+        
+        //health_audio.loop = true;
+        health_audio.Play();
+        yield return new WaitForSeconds(health_audio.clip.length);
+        health_audio.Stop();
+    }
+    */ 
+
 
     public void UpdateHealthBar()
     {
@@ -34,6 +54,10 @@ public class HealthBar : MonoBehaviour
         if (hitpoint < 30)
         {
             LowHealth.enabled = true;
+
+            Debug.Log("Playing audio");
+           // health_audio.clip = lowSound;
+            //health_audio.Play();
         }
 
         hitpoint -= damage;
@@ -44,9 +68,11 @@ public class HealthBar : MonoBehaviour
             SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
         }
 
+       // health_audio.Stop();
         UpdateHealthBar();
 
     }
+
 
     public void HealthDamage(float heal)
     {
