@@ -43,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private AudioSource healthbarAudio;
+        private bool lh_already_playing = false; //low health sound is already playing 
 
         public AudioSource[] audios = new AudioSource[2]; 
 
@@ -74,16 +75,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_StepCycle = 0f;
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
-            m_AudioSource = GetComponent<AudioSource>();
+            //m_AudioSource = GetComponent<AudioSource>(); //gets only one audio source
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+   
 
             v = vegetable.GetComponent<Collider>();
 
             //Can you get an instance to this current player's health
             player_health = GetComponent<HealthBar>();
 
-            audios[0] = m_AudioSource;
-            audios[1] = healthbarAudio; 
+            audios = GetComponents<AudioSource>(); //already sets with the two arrays automatically
+            m_AudioSource = audios[0];
+            healthbarAudio = audios[1]; 
+            //audios[0] = m_AudioSource;
+            //audios[1] = healthbarAudio; 
         }
 
 
@@ -191,20 +197,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
 
-
-            //AUDIO FOR HEALTH LOW - HELP 
-            /*
-            if(player_health.getHitpoint() < 30)
+            //Own code for audio source 
+            if (player_health.getHitpoint() < 30)
             {
-                audios[1].clip = low_healthSound;
-                audios[1].Play(); 
+                if (!lh_already_playing)
+                {
+                    PlayLowHealthSound(); 
+                }
             }
-            else if (player_health.getHitpoint() >= 30)
+            else if(player_health.getHitpoint() >= 30)
             {
-                audios[1].Stop(); 
+                if(lh_already_playing)
+                {
+                    StopLowHealthSound(); 
+                }
             }
-            */ 
-
         }
 
         IEnumerator ProtectionTime()
@@ -232,6 +239,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             //player_health.setHitpoint(stopHealth);
             //player_health.UpdateHealthBar();
+        }
+
+        private void PlayLowHealthSound()
+        {
+            audios[1].clip = low_healthSound;
+            audios[1].Play();
+            audios[1].loop = true;
+            lh_already_playing = true;
+        }
+
+        private void StopLowHealthSound()
+        {
+            audios[1].loop = false;
+            audios[1].Stop();
+            lh_already_playing = false; //stopped playing 
         }
 
         private void PlayLandingSound()
