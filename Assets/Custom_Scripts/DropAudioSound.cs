@@ -25,10 +25,12 @@ public class DropAudioSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(player.daikon != null) //check that it exists 
         {
             vegePickedUp = player.daikon_already_used;
         }
+        */ 
        
     }
 

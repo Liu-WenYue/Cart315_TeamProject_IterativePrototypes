@@ -45,7 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource healthbarAudio;
         private bool lh_already_playing = false; //low health sound is already playing 
 
-        public AudioSource[] audios = new AudioSource[2];
+        public AudioSource[] audios = new AudioSource[3];
 
         public GameObject vegetable; //reference of prefab 
         private GameObject current_vegetable; 
@@ -53,6 +53,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Vegetable daikon;
         bool daikon_picked;
         public bool daikon_already_used = false;
+        private bool daikon_created = false; 
+        public AudioClip drop;
+        AudioSource daikon_dropAudio; 
 
 
         public Potion heal;
@@ -102,7 +105,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             audios = GetComponents<AudioSource>(); //already sets with the two arrays automatically
             m_AudioSource = audios[0];
-            healthbarAudio = audios[1]; 
+            healthbarAudio = audios[1];
+            daikon_dropAudio = audios[2]; 
             //audios[0] = m_AudioSource;
             //audios[1] = healthbarAudio; 
         }
@@ -134,10 +138,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
             //DAIKON IS picked
-            //instantiate game object //before using 
-
-            if(Vegetable.num_daikon == 1)
+            
+            
+            if((Vegetable.num_daikon == 1)&&(!daikon_created))
             {
+                Debug.Log("Creating daikon instance"); 
                 daikon_already_used = false;
                 current_vegetable = Instantiate(vegetable, new Vector3(vegetable.transform.position.x, vegetable.transform.position.y, vegetable.transform.position.z), Quaternion.identity);
                 current_vegetable.transform.Rotate(0, 90, 0); 
@@ -145,21 +150,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 v = current_vegetable.GetComponent<Collider>();
                 v.isTrigger = false;
                 current_vegetable.GetComponent<MeshRenderer>().enabled = false;
+                daikon_created = true; 
             }
+            
 
+           // daikon_picked = daikon.daikon_ispicked; -> cuz vegetable is destroyed 
 
-            daikon_picked = daikon.daikon_ispicked;
-            if(daikon_picked)
-            {
-                if((!daikon_already_used))
+            //if(daikon_picked)
+            //{
+                if((!daikon_already_used)&&(daikon_created))
                 {
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        daikon_already_used = true; //for this current one 
-                        current_vegetable.GetComponent<MeshRenderer>().enabled = true; 
-                        Vegetable.num_daikon = 0; 
                         Debug.Log("Player pressed E - DAIKON");
+                        current_vegetable.GetComponent<MeshRenderer>().enabled = true;
 
                         current_vegetable.transform.position = Vector3.MoveTowards(vegetable.transform.position, this.transform.position, 1000f * Time.deltaTime);
 
@@ -167,12 +172,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         //vegetable.transform.position.Set(-18f, 0.2f, -4.16f);
                         current_vegetable.transform.Translate(new Vector3(0, 0, -0.1f));
 
+                        current_vegetable.transform.Rotate(new Vector3(90, 90, 0));
                         
-                        Vegetable.num_daikon = 0; //because we used the daikon 
+
+                        audios[2].clip = drop;
+                        audios[2].PlayOneShot(drop); 
+
+                        daikon_already_used = true; //for this current one - for sound 
+                        daikon_created = false; //for this one 
+                        
+                        Vegetable.num_daikon = 0; 
+
                         daikon_used.SetActive(true);
                     }
                 }
-            }
+            //}
 
             has_potion = heal.potion_picked; 
 
