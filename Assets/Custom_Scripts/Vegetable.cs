@@ -27,6 +27,10 @@ public class Vegetable : MonoBehaviour
     AudioSource pickup;
     public bool alreadyPlayed = false; 
 
+    public static int num_daikon = 0;
+
+    public GameObject daikon_active;
+    public GameObject daikon_used; 
     // Start is called before the first frame update
     void Start()
     {
@@ -81,9 +85,21 @@ public class Vegetable : MonoBehaviour
             Debug.Log("Found player by vegetable"); 
             if(f_pressed)
             {
-                playPickUpAudio(); 
-                daikon_ispicked = true;
-                this.gameObject.SetActive(false);
+                if(num_daikon == 0)
+                {
+                    playPickUpAudio();
+                    daikon_ispicked = true;
+                    this.gameObject.SetActive(false);
+                    num_daikon++;
+
+
+                }
+                else if(num_daikon == 1)
+                {
+                    //Wrong input sound?
+                    Debug.Log("Cannot pickup more than one daikon!"); 
+                }
+               
             }
         }
     }

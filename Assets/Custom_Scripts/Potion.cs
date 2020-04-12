@@ -14,7 +14,12 @@ public class Potion : MonoBehaviour
     public bool alreadyPlayed = false;
 
     public MeshRenderer cork;
-    public MeshRenderer liquid; 
+    public MeshRenderer liquid;
+
+    public static int num_potion = 0;
+
+    public GameObject potion_active;
+    public GameObject potion_used; 
     // Start is called before the first frame update
     void Start()
     {
@@ -34,16 +39,28 @@ public class Potion : MonoBehaviour
         {
             if(f_pressed)
             {
-                Debug.Log("Player pressed F"); 
-                //Play pickup audio
-                playPickUpAudio();
+                if(num_potion == 0)
+                {
+                    // Debug.Log("Player pressed F"); 
+                    //Play pickup audio
+                    playPickUpAudio();
 
-                potion_picked = true; 
+                    potion_picked = true;
 
-                //Make potion disappear
-                this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                cork.enabled = false;
-                liquid.enabled = false; 
+                    //Make potion disappear
+                    this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    cork.enabled = false;
+                    liquid.enabled = false;
+
+                    potion_used.SetActive(false); 
+                    potion_active.SetActive(true); 
+                    num_potion++;
+                }
+                else
+                {
+                    Debug.Log("Cannot pickup more than one potion"); 
+                }
+               
             }
         }
     }

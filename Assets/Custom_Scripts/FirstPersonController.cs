@@ -54,7 +54,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public Potion heal;
         bool has_potion;
-        bool used_potion = false;
+        //bool used_potion = false;
         public DrinkPotionAudio potionAudio; 
 
         private HealthBar player_health;
@@ -62,7 +62,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Shield protection;
         bool has_shield;
         bool used_shield = false;
-        private float stopHealth; 
+        private float stopHealth;
+
+
+        //private int num_daikon = 1;
+        //private int num_potion = 1;
+       // private int num_shield = 1;
+
+       // public GameObject notfound1;
+       // public GameObject daikon_active;
+       // public GameObject daikon_used;
+
+        //public GameObject notfound2;
+        //public GameObject potion_active;
+        public GameObject potion_used; 
 
         // Use this for initialization
         private void Start()
@@ -136,8 +149,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         vegetable.transform.Translate(new Vector3(0, 0, 0.5f));
                         vegetable.SetActive(true);
                         v.isTrigger = false;
+                        Vegetable.num_daikon = 0; //because we used the daikon 
                     }
-            
             }
 
             has_potion = heal.potion_picked; 
@@ -146,12 +159,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 Debug.Log("Player pressed R - USING POTION");
 
-                if (!used_potion)
-                {
-                    used_potion = true;
+                //if (!used_potion)
+                //{
                     //Debug.Log(player_health.getHitpoint());
                     Debug.Log("Player used potion!");
                     potionAudio.DrinkingAudio();
+                    Potion.num_potion = 0; //because we used the potion
+                    potion_used.SetActive(true); 
 
                     float current_health = player_health.getHitpoint();
                     //Add 50.0f
@@ -177,7 +191,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     //has_potion = false; 
                     //Debug.Log(player_health.getHitpoint());
                     //Destroy(heal);
-                }
+                //}
             }
 
             has_shield = protection.shield_picked;
@@ -244,6 +258,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayLowHealthSound()
         {
             audios[1].clip = low_healthSound;
+            //audios[1].volume = 0.3f; 
             audios[1].Play();
             audios[1].loop = true;
             lh_already_playing = true;
