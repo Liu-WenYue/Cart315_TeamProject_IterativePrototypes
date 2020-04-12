@@ -295,7 +295,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayLowHealthSound()
         {
             audios[1].clip = low_healthSound;
-            //audios[1].volume = 0.3f; 
+            audios[1].volume = 0.5f; 
             audios[1].Play();
             audios[1].loop = true;
             lh_already_playing = true;

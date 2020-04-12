@@ -3684,7 +3684,7 @@ PrefabInstance:
         type: 3}
       propertyPath: low_healthSound
       value: 
-      objectReference: {fileID: 8300000, guid: 523becfee9d002e4fb9105a07ed85cb7, type: 3}
+      objectReference: {fileID: 8300000, guid: 7547ba4d010da1e47a76e2b0b020b273, type: 3}
     - target: {fileID: 4364229773313018241, guid: 541e8999d5496c34a805c17a47883a71,
         type: 3}
       propertyPath: potion_used
