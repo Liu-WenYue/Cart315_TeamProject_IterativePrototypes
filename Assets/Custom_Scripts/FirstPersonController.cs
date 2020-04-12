@@ -155,8 +155,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
 
            // daikon_picked = daikon.daikon_ispicked; -> cuz vegetable is destroyed 
-
-            //if(daikon_picked)
+           //checking for null 
+           if(current_vegetable != null)
+           { //if(daikon_picked)
             //{
                 if((!daikon_already_used)&&(daikon_created))
                 {
@@ -186,7 +187,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         daikon_used.SetActive(true);
                     }
                 }
-            //}
+           }
 
             has_potion = heal.potion_picked; 
 
