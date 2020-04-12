@@ -30,7 +30,10 @@ public class Vegetable : MonoBehaviour
     public static int num_daikon = 0;
 
     public GameObject daikon_active;
-    public GameObject daikon_used; 
+    public GameObject daikon_used;
+
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -89,10 +92,13 @@ public class Vegetable : MonoBehaviour
                 {
                     playPickUpAudio();
                     daikon_ispicked = true;
-                    this.gameObject.SetActive(false);
+
+                    
+                    daikon_used.SetActive(false);
+                    daikon_active.SetActive(true);
                     num_daikon++;
-
-
+                    //this.gameObject.GetComponent<MeshRenderer>().enabled = false; 
+                    Destroy(this.gameObject); 
                 }
                 else if(num_daikon == 1)
                 {

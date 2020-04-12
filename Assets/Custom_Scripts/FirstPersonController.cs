@@ -45,12 +45,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource healthbarAudio;
         private bool lh_already_playing = false; //low health sound is already playing 
 
-        public AudioSource[] audios = new AudioSource[2]; 
+        public AudioSource[] audios = new AudioSource[2];
 
-        public GameObject vegetable;
+        public GameObject vegetable; //reference of prefab 
+        private GameObject current_vegetable; 
         private Collider v;
         public Vegetable daikon;
         bool daikon_picked;
+        public bool daikon_already_used = false;
+
 
         public Potion heal;
         bool has_potion;
@@ -71,7 +74,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
        // public GameObject notfound1;
        // public GameObject daikon_active;
-       // public GameObject daikon_used;
+        public GameObject daikon_used;
 
         //public GameObject notfound2;
         //public GameObject potion_active;
@@ -91,9 +94,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //m_AudioSource = GetComponent<AudioSource>(); //gets only one audio source
 			m_MouseLook.Init(transform , m_Camera.transform);
 
-   
 
-            v = vegetable.GetComponent<Collider>();
+            //v = vegetable.GetComponent<Collider>();
 
             //Can you get an instance to this current player's health
             player_health = GetComponent<HealthBar>();
@@ -132,25 +134,44 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
             //DAIKON IS picked
-            //instantiate game object 
+            //instantiate game object //before using 
+
+            if(Vegetable.num_daikon == 1)
+            {
+                daikon_already_used = false;
+                current_vegetable = Instantiate(vegetable, new Vector3(vegetable.transform.position.x, vegetable.transform.position.y, vegetable.transform.position.z), Quaternion.identity);
+                current_vegetable.transform.Rotate(0, 90, 0); 
+
+                v = current_vegetable.GetComponent<Collider>();
+                v.isTrigger = false;
+                current_vegetable.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+
             daikon_picked = daikon.daikon_ispicked;
             if(daikon_picked)
             {
-                //if (vegetable.activeSelf == false)
-                
+                if((!daikon_already_used))
+                {
+
                     if (Input.GetKeyDown(KeyCode.E))
                     {
+                        daikon_already_used = true; //for this current one 
+                        current_vegetable.GetComponent<MeshRenderer>().enabled = true; 
+                        Vegetable.num_daikon = 0; 
                         Debug.Log("Player pressed E - DAIKON");
 
-                        vegetable.transform.position = Vector3.MoveTowards(vegetable.transform.position, this.transform.position, 1000f * Time.deltaTime);
+                        current_vegetable.transform.position = Vector3.MoveTowards(vegetable.transform.position, this.transform.position, 1000f * Time.deltaTime);
 
                         //translate downwards
                         //vegetable.transform.position.Set(-18f, 0.2f, -4.16f);
-                        vegetable.transform.Translate(new Vector3(0, 0, 0.5f));
-                        vegetable.SetActive(true);
-                        v.isTrigger = false;
+                        current_vegetable.transform.Translate(new Vector3(0, 0, -0.1f));
+
+                        
                         Vegetable.num_daikon = 0; //because we used the daikon 
+                        daikon_used.SetActive(true);
                     }
+                }
             }
 
             has_potion = heal.potion_picked; 
@@ -165,6 +186,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     Debug.Log("Player used potion!");
                     potionAudio.DrinkingAudio();
                     Potion.num_potion = 0; //because we used the potion
+
                     potion_used.SetActive(true); 
 
                     float current_health = player_health.getHitpoint();

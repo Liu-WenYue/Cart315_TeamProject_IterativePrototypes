@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class DropAudioSound : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class DropAudioSound : MonoBehaviour
 
 
     public bool vegePickedUp = false;
-    public Vegetable daikon;
+    public FirstPersonController player; 
+
+    //public Vegetable daikon;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +25,11 @@ public class DropAudioSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (daikon.daikon_ispicked)
+        if(player.daikon != null) //check that it exists 
         {
-            vegePickedUp = true;
+            vegePickedUp = player.daikon_already_used;
         }
+       
     }
 
 
