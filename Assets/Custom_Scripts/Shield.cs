@@ -29,7 +29,9 @@ public class Shield : MonoBehaviour
     public GameObject shield_active;
     public GameObject shield_used;
 
-    public static int num_shield; 
+    public static int num_shield;
+
+    bool mouseclick; 
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +43,14 @@ public class Shield : MonoBehaviour
     void Update()
     {
         f_pressed = Input.GetKeyDown("f");
+        //mouseclick = Input.GetMouseButtonDown(1); 
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if(f_pressed)
+            if(f_pressed) //f_pressed
             {
                 if(num_shield == 0)
                 {
