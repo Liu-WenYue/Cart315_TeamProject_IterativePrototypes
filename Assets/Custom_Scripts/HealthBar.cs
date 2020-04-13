@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class HealthBar : MonoBehaviour
 {
@@ -14,11 +15,17 @@ public class HealthBar : MonoBehaviour
     private float hitpoint = 100f;
     private float maxHitpoint = 100f;
 
+    public FirstPersonController player;
+    private bool shielded;
+
+
+
+
     //OTHER METHOD - GET AUDIOSOURCE FROM AN EMPTY OBJECT 
     //public AudioSource empty; 
     //[SerializeField]private AudioClip lowSound;
     //private AudioSource health_audio; 
-    
+
     //public AudioSource[] player_audio = new AudioSource[2]; 
 
 
@@ -40,7 +47,12 @@ public class HealthBar : MonoBehaviour
         yield return new WaitForSeconds(health_audio.clip.length);
         health_audio.Stop();
     }
-    */ 
+    */
+
+    private void Update()
+    {
+        shielded = player.using_shield; 
+    }
 
 
     public void UpdateHealthBar()
@@ -53,27 +65,37 @@ public class HealthBar : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (hitpoint < 30)
+        if(shielded)
         {
-            LowHealth.enabled = true;
-
-            Debug.Log("Playing audio");
-           //health_audio.clip = lowSound;
-            //health_audio.Play();
+            //protected from enemy
+            Debug.Log("Protected from enemy"); 
         }
-
-        hitpoint -= damage;
-        if (hitpoint < 0)
+        else if(!shielded) //vulenrable to damage - dont really need 
         {
-            hitpoint = 0;
-            Debug.Log("Dead!");
-            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
-        }
+            if (hitpoint < 30)
+            {
+                LowHealth.enabled = true;
 
-        UpdateHealthBar();
+                Debug.Log("Playing audio");
+                //health_audio.clip = lowSound;
+                //health_audio.Play();
+            }
+
+            hitpoint -= damage;
+            if (hitpoint < 0)
+            {
+                hitpoint = 0;
+                Debug.Log("Dead!");
+                SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
+            }
+
+            UpdateHealthBar();
+        }
 
     }
 
+    
+     
 
     public void HealthDamage(float heal)
     {

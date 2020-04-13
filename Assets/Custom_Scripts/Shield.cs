@@ -26,6 +26,10 @@ public class Shield : MonoBehaviour
     AudioSource pickup;
     public bool alreadyPlayed = false;
 
+    public GameObject shield_active;
+    public GameObject shield_used;
+
+    public static int num_shield; 
 
     // Start is called before the first frame update
     void Start()
@@ -45,22 +49,34 @@ public class Shield : MonoBehaviour
         {
             if(f_pressed)
             {
-                shield_picked = true;
-                playPickUpAudio();
-                Debug.Log("Player found shield");
+                if(num_shield == 0)
+                {
+                    shield_picked = true;
 
-                //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                major.enabled = false;
-                p1.enabled = false;
-                p2.enabled = false;
-                p3.enabled = false;
-                p4.enabled = false;
-                p5.enabled = false;
-                p6.enabled = false;
-                p7.enabled = false;
-                p8.enabled = false;
-                p9.enabled = false;
-                p10.enabled = false; 
+                    shield_used.SetActive(false); 
+                    shield_active.SetActive(true);
+
+                    playPickUpAudio();
+                    Debug.Log("Player found shield");
+
+                    //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    major.enabled = false;
+                    p1.enabled = false;
+                    p2.enabled = false;
+                    p3.enabled = false;
+                    p4.enabled = false;
+                    p5.enabled = false;
+                    p6.enabled = false;
+                    p7.enabled = false;
+                    p8.enabled = false;
+                    p9.enabled = false;
+                    p10.enabled = false;
+                }
+                else if(num_shield == 1)
+                {
+                    Debug.Log("Cannot pickup more than one shield!");
+                }
+                
             }
         }
     }

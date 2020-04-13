@@ -47,7 +47,7 @@ public class Potion : MonoBehaviour
 
                     potion_picked = true;
 
-                    //Make potion disappear
+                    //Make potion disappear - mesh renderer
                     this.gameObject.GetComponent<MeshRenderer>().enabled = false;
                     cork.enabled = false;
                     liquid.enabled = false;

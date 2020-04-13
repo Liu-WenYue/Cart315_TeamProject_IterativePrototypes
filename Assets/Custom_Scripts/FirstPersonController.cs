@@ -54,8 +54,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         bool daikon_picked;
         public bool daikon_already_used = false;
         private bool daikon_created = false; 
+
         public AudioClip drop;
-        AudioSource daikon_dropAudio; 
+        AudioSource dropAudio; 
 
 
         public Potion heal;
@@ -67,21 +68,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public Shield protection;
         bool has_shield;
-        bool used_shield = false;
-        private float stopHealth;
+        public bool using_shield = false;
+
+        public AudioSource shield_sound;
+        //private float stopHealth;
 
 
         //private int num_daikon = 1;
         //private int num_potion = 1;
-       // private int num_shield = 1;
+        // private int num_shield = 1;
 
-       // public GameObject notfound1;
-       // public GameObject daikon_active;
+        // public GameObject notfound1;
+        // public GameObject daikon_active;
         public GameObject daikon_used;
 
         //public GameObject notfound2;
         //public GameObject potion_active;
-        public GameObject potion_used; 
+        public GameObject potion_used;
+
+        public GameObject shield_used; 
 
         // Use this for initialization
         private void Start()
@@ -106,7 +111,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             audios = GetComponents<AudioSource>(); //already sets with the two arrays automatically
             m_AudioSource = audios[0];
             healthbarAudio = audios[1];
-            daikon_dropAudio = audios[2]; 
+            dropAudio = audios[2]; 
             //audios[0] = m_AudioSource;
             //audios[1] = healthbarAudio; 
         }
@@ -235,7 +240,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if ((has_shield) && (Input.GetKeyDown(KeyCode.T)))
             {
+                Debug.Log("Using shield"); 
+                using_shield = true;
+                shield_used.SetActive(true);
 
+                audios[2].clip = drop;
+                audios[2].PlayOneShot(drop);
+
+                StartCoroutine(ProtectionTime());
+
+                //Transferring code to Trigger Zone 
+                /*
                 if (!used_shield)
                 {
                     used_shield = true;
@@ -246,7 +261,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     player_health.setHitpoint(stopHealth);
                     player_health.UpdateHealthBar();
                 }
+                */
             }
+
 
             //Own code for audio source 
             if (player_health.getHitpoint() < 30)
@@ -265,31 +282,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+
+
         IEnumerator ProtectionTime()
         {
             Debug.Log("Player protected from damage");
-            //current_health point
-            stopHealth = player_health.getHitpoint();
-            Debug.Log(stopHealth);
 
-            //player_health.setHitpoint(stopHealth);
-            //player_health.UpdateHealthBar();
 
-            player_health.TakeDamage(0);
-            player_health.UpdateHealthBar();
+            shield_sound.Play();
+            shield_sound.loop = true;
 
-            yield return new WaitForSeconds(10);
-            //Safe guard function 
-            player_health.setHitpoint(stopHealth);
-            player_health.UpdateHealthBar();
+            yield return new WaitForSeconds(5);
 
-            Debug.Log("Counted 3 seconds");
-            //Debug.Log(player_health.getHitpoint());
-
-            player_health.TakeDamage(20);
-
-            //player_health.setHitpoint(stopHealth);
-            //player_health.UpdateHealthBar();
+            using_shield = false; 
+            
+            shield_sound.loop = false;
+            shield_sound.Stop();
+            Debug.Log("Protected for 5 seconds");
         }
 
         private void PlayLowHealthSound()
