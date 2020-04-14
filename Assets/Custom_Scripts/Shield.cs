@@ -74,6 +74,8 @@ public class Shield : MonoBehaviour
                     p8.enabled = false;
                     p9.enabled = false;
                     p10.enabled = false;
+
+                    num_shield++; 
                 }
                 else if(num_shield == 1)
                 {

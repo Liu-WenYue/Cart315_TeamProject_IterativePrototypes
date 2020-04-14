@@ -244,6 +244,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 using_shield = true;
                 shield_used.SetActive(true);
 
+                Shield.num_shield--; 
+
                 audios[2].clip = drop;
                 audios[2].PlayOneShot(drop);
 
@@ -281,8 +283,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
         }
-
-
 
         IEnumerator ProtectionTime()
         {
