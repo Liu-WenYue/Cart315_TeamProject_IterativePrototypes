@@ -56,7 +56,7 @@ public class Potion : MonoBehaviour
                     potion_active.SetActive(true); 
                     num_potion++;
                 }
-                else
+                else if(num_potion == 1)
                 {
                     Debug.Log("Cannot pickup more than one potion"); 
                 }

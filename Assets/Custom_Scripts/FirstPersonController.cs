@@ -59,15 +59,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         AudioSource dropAudio; 
 
 
-        public Potion heal;
-        bool has_potion;
+        //public Potion heal;
+        //bool has_potion;
         //bool used_potion = false;
-        public DrinkPotionAudio potionAudio; 
+        //public DrinkPotionAudio potionAudio; 
 
         private HealthBar player_health;
 
-        public Shield protection;
-        bool has_shield;
+        //public Shield protection;
+        //bool has_shield;
         public bool using_shield = false;
 
         public AudioSource shield_sound;
@@ -150,7 +150,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Debug.Log("Creating daikon instance"); 
                 daikon_already_used = false;
                 current_vegetable = Instantiate(vegetable, new Vector3(vegetable.transform.position.x, vegetable.transform.position.y, vegetable.transform.position.z), Quaternion.identity);
-                current_vegetable.transform.Rotate(0, 90, 0); 
+                //current_vegetable = Instantiate(vegetable, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity); //instantiate where the player is
+                //current_vegetable.transform.Rotate(0, 90, 0); 
 
                 v = current_vegetable.GetComponent<Collider>();
                 v.isTrigger = false;
@@ -170,16 +171,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         Debug.Log("Player pressed E - DAIKON");
-                        current_vegetable.GetComponent<MeshRenderer>().enabled = true;
 
-                        current_vegetable.transform.position = Vector3.MoveTowards(vegetable.transform.position, this.transform.position, 1000f * Time.deltaTime);
+                        float dplayer = Vector3.Distance(current_vegetable.transform.position, this.transform.position);
+                        float oneleap = dplayer / (Time.deltaTime);
+
+                        //100000000f
+                        current_vegetable.transform.position = Vector3.MoveTowards(current_vegetable.transform.position, this.transform.position, oneleap * Time.deltaTime);
 
                         //translate downwards
                         //vegetable.transform.position.Set(-18f, 0.2f, -4.16f);
+
                         current_vegetable.transform.Translate(new Vector3(0, 0, -0.1f));
 
                         current_vegetable.transform.Rotate(new Vector3(90, 90, 0));
-                        
+
+
+                        current_vegetable.GetComponent<MeshRenderer>().enabled = true;
+
 
                         audios[2].clip = drop;
                         audios[2].PlayOneShot(drop); 
@@ -194,9 +202,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
            }
 
-            has_potion = heal.potion_picked; 
-
-            if((has_potion)&&(Input.GetKeyDown(KeyCode.R)))
+            if((Potion.num_potion == 1)&&(Input.GetKeyDown(KeyCode.R))) //if you have one potion
             {
                 Debug.Log("Player pressed R - USING POTION");
 
@@ -204,7 +210,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 //{
                     //Debug.Log(player_health.getHitpoint());
                     Debug.Log("Player used potion!");
-                    potionAudio.DrinkingAudio();
+                    audios[2].clip = drop;
+                    audios[2].PlayOneShot(drop);
+
+
                     Potion.num_potion = 0; //because we used the potion
 
                     potion_used.SetActive(true); 
@@ -236,15 +245,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 //}
             }
 
-            has_shield = protection.shield_picked;
+            //has_shield = protection.shield_picked;
 
-            if ((has_shield) && (Input.GetKeyDown(KeyCode.T)))
+            if ((Shield.num_shield == 1) && (Input.GetKeyDown(KeyCode.T)))
             {
                 Debug.Log("Using shield"); 
                 using_shield = true;
                 shield_used.SetActive(true);
 
-                Shield.num_shield--; 
+                Shield.num_shield = 0; //reset the number of shield 
 
                 audios[2].clip = drop;
                 audios[2].PlayOneShot(drop);
