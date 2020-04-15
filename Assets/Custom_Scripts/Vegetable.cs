@@ -24,8 +24,11 @@ public class Vegetable : MonoBehaviour
 
     public AudioClip PickUpSound;
     public float volume; 
-    AudioSource pickup;
-    public bool alreadyPlayed = false; 
+    AudioSource Source;
+    public bool alreadyPlayed = false;
+
+    public AudioClip wrongSound; 
+    public bool wrongPlayed = false; 
 
     public static int num_daikon = 0;
 
@@ -37,7 +40,7 @@ public class Vegetable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pickup = GetComponent<AudioSource>(); 
+        Source = GetComponent<AudioSource>(); 
     }
 
     // Update is called once per frame
@@ -103,6 +106,7 @@ public class Vegetable : MonoBehaviour
                 else if(num_daikon == 1)
                 {
                     //Wrong input sound?
+                    playWrongAudio(); 
                     Debug.Log("Cannot pickup more than one daikon!"); 
                 }
                
@@ -145,9 +149,23 @@ public class Vegetable : MonoBehaviour
         {
             Debug.Log("Playing audio");
             //pickup.PlayOneShot(PickUpSound);
+            //Source.clip = PickUpSound;
+            //Source.PlayOneShot(PickUpSound); 
             AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
             alreadyPlayed = true;
         }
+    }
+
+    private void playWrongAudio()
+    {
+
+        Debug.Log("Playing wrong audio");
+        Source.clip = wrongSound;
+        Source.PlayOneShot(wrongSound);
+
+        //wrongPlayed = true;
+        //AudioSource.PlayClipAtPoint(wrong, transform.position); 
+
     }
 
 

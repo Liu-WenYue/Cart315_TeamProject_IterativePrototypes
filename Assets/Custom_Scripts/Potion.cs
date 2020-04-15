@@ -10,8 +10,10 @@ public class Potion : MonoBehaviour
 
     public AudioClip PickUpSound;
     public float volume = 1; 
-    AudioSource pickup;
+    AudioSource Source;
     public bool alreadyPlayed = false;
+
+    public AudioClip wrongSound; 
 
     public MeshRenderer cork;
     public MeshRenderer liquid;
@@ -19,11 +21,14 @@ public class Potion : MonoBehaviour
     public static int num_potion = 0;
 
     public GameObject potion_active;
-    public GameObject potion_used; 
+    public GameObject potion_used;
+
+    private Collider potion_c; 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Source = GetComponent<AudioSource>();
+        potion_c = GetComponent<Collider>(); 
     }
 
     // Update is called once per frame
@@ -53,11 +58,14 @@ public class Potion : MonoBehaviour
                     liquid.enabled = false;
 
                     potion_used.SetActive(false); 
-                    potion_active.SetActive(true); 
+                    potion_active.SetActive(true);
+
+                    potion_c.enabled = false; 
                     num_potion++;
                 }
                 else if(num_potion == 1)
                 {
+                    playWrongAudio();
                     Debug.Log("Cannot pickup more than one potion"); 
                 }
                
@@ -75,6 +83,18 @@ public class Potion : MonoBehaviour
             AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
             alreadyPlayed = true;
         }
+    }
+
+    private void playWrongAudio()
+    {
+
+        Debug.Log("Playing wrong audio");
+        Source.clip = wrongSound;
+        Source.PlayOneShot(wrongSound);
+
+        //wrongPlayed = true;
+        //AudioSource.PlayClipAtPoint(wrong, transform.position); 
+
     }
 
 

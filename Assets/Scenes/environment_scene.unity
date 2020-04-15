@@ -154,6 +154,7 @@ MonoBehaviour:
   p10: {fileID: 1484349827}
   PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
   shield_used: {fileID: 588678708}
 --- !u!82 &47994283
@@ -166,7 +167,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -474,6 +475,16 @@ PrefabInstance:
       propertyPath: potion_used
       value: 
       objectReference: {fileID: 1151747306}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7396209187235816793, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_Name
@@ -809,6 +820,16 @@ PrefabInstance:
       propertyPath: daikon_used
       value: 
       objectReference: {fileID: 2075894097}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 15393311376151724, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_Name
@@ -817,17 +838,17 @@ PrefabInstance:
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.99756
+      value: 18.6
       objectReference: {fileID: 0}
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3718052
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.227358
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
@@ -1046,17 +1067,17 @@ PrefabInstance:
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.550764
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.70000005
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.5185676
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
@@ -1173,6 +1194,16 @@ PrefabInstance:
       propertyPath: daikon_used
       value: 
       objectReference: {fileID: 2075894097}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 15393311376151724, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_Name
@@ -1181,17 +1212,17 @@ PrefabInstance:
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.258339
+      value: -28.028337
       objectReference: {fileID: 0}
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29180527
+      value: 0.3018052
       objectReference: {fileID: 0}
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.18896
+      value: -22.69896
       objectReference: {fileID: 0}
     - target: {fileID: 17410348135999860, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
@@ -2995,6 +3026,16 @@ PrefabInstance:
       propertyPath: potion_used
       value: 
       objectReference: {fileID: 1151747306}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7396209187235816793, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_Name
@@ -3616,6 +3657,16 @@ PrefabInstance:
       propertyPath: daikon_used
       value: 
       objectReference: {fileID: 2075894097}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 15393311376151724, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_Name
@@ -3835,17 +3886,17 @@ PrefabInstance:
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.61
+      value: -27.38
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.089999914
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.43
+      value: -21.94
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
@@ -4059,6 +4110,16 @@ PrefabInstance:
       propertyPath: daikon_used
       value: 
       objectReference: {fileID: 2075894097}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 15393311376151724, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_Name
@@ -4676,17 +4737,17 @@ PrefabInstance:
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.47
+      value: 18.072441
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00999999
+      value: 0.018194824
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.38
+      value: -21.152641
       objectReference: {fileID: 0}
     - target: {fileID: 6624690808895412341, guid: b480009973969564bba497bb3b5b38c7,
         type: 3}
@@ -7655,6 +7716,16 @@ PrefabInstance:
       propertyPath: potion_used
       value: 
       objectReference: {fileID: 1151747306}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7396209187235816793, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_Name
@@ -8044,6 +8115,16 @@ PrefabInstance:
       propertyPath: potion_used
       value: 
       objectReference: {fileID: 1151747306}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7396209187235816793, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_Name
@@ -8900,6 +8981,7 @@ MonoBehaviour:
   p10: {fileID: 1480184038}
   PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
   shield_used: {fileID: 588678708}
 --- !u!82 &1480184050
@@ -8912,7 +8994,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10228,15 +10310,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fa0a723e3534aca47bcf60641f2f3a8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.572483
+      value: -11.521721
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fa0a723e3534aca47bcf60641f2f3a8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38819313
+      value: 0.3118069
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fa0a723e3534aca47bcf60641f2f3a8d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.4680333
+      value: 8.850535
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fa0a723e3534aca47bcf60641f2f3a8d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10889,6 +10971,7 @@ MonoBehaviour:
   p10: {fileID: 1770648769}
   PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
   shield_used: {fileID: 588678708}
 --- !u!82 &1770648781
@@ -10901,7 +10984,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11171,6 +11254,7 @@ MonoBehaviour:
   p10: {fileID: 988778622}
   PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
   shield_used: {fileID: 588678708}
 --- !u!82 &1787483560
@@ -11183,7 +11267,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11441,6 +11525,7 @@ MonoBehaviour:
   p10: {fileID: 1789702593}
   PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
   shield_used: {fileID: 588678708}
 --- !u!82 &1789702605
@@ -11453,7 +11538,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11892,6 +11977,16 @@ PrefabInstance:
       propertyPath: potion_used
       value: 
       objectReference: {fileID: 1151747306}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7396209187235816793, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_Name
@@ -13931,6 +14026,7 @@ MonoBehaviour:
   p10: {fileID: 770097414}
   PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
   shield_used: {fileID: 588678708}
 --- !u!82 &2138800594
@@ -13943,7 +14039,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -14081,6 +14177,16 @@ PrefabInstance:
       propertyPath: daikon_used
       value: 
       objectReference: {fileID: 2075894097}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 15393311376151724, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_Name
@@ -14161,6 +14267,16 @@ PrefabInstance:
       propertyPath: potion_used
       value: 
       objectReference: {fileID: 1151747306}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: wrongSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7396209187235816793, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_Name

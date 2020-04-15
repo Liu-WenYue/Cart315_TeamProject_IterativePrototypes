@@ -23,20 +23,26 @@ public class Shield : MonoBehaviour
 
     public AudioClip PickUpSound;
    // public float volume;
-    AudioSource pickup;
+    AudioSource Source;
     public bool alreadyPlayed = false;
+    public AudioClip wrongSound;
+
 
     public GameObject shield_active;
     public GameObject shield_used;
 
-    public static int num_shield;
 
-    bool mouseclick; 
+    public static int num_shield = 0;
+
+    private Collider shield_c; 
+
 
     // Start is called before the first frame update
     void Start()
     {
-        pickup = GetComponent<AudioSource>();
+        Source = GetComponent<AudioSource>();
+        shield_c = GetComponent<Collider>(); 
+
     }
 
     // Update is called once per frame
@@ -75,12 +81,17 @@ public class Shield : MonoBehaviour
                     p9.enabled = false;
                     p10.enabled = false;
 
+                    shield_c.enabled = false; //disable this specific collider 
                     num_shield++; 
+
                 }
                 else if(num_shield == 1)
                 {
+                    playWrongAudio();
                     Debug.Log("Cannot pickup more than one shield!");
+                    
                 }
+                  
                 
             }
         }
@@ -94,7 +105,20 @@ public class Shield : MonoBehaviour
             Debug.Log("Playing audio");
             //pickup.PlayOneShot(PickUpSound);
             AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
+           
         }
     }
 
+    private void playWrongAudio()
+    {
+
+        Debug.Log("Playing wrong audio");
+        Source.clip = wrongSound;
+        Source.PlayOneShot(wrongSound);
+
+        //wrongPlayed = true;
+        //AudioSource.PlayClipAtPoint(wrong, transform.position); 
+
+
+    }
 }
