@@ -8448,6 +8448,11 @@ PrefabInstance:
       propertyPath: shield_sound
       value: 
       objectReference: {fileID: 931505178}
+    - target: {fileID: 4364229773313018241, guid: 541e8999d5496c34a805c17a47883a71,
+        type: 3}
+      propertyPath: m_MouseLook.lockCursor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541e8999d5496c34a805c17a47883a71, type: 3}
 --- !u!1001 &1439813573
