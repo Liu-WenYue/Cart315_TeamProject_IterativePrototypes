@@ -835,6 +835,11 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: eatingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dab72260b2306146b4ec6acbeff2603, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -1214,6 +1219,11 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: eatingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dab72260b2306146b4ec6acbeff2603, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -3687,6 +3697,11 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: eatingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dab72260b2306146b4ec6acbeff2603, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -4145,6 +4160,11 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: eatingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dab72260b2306146b4ec6acbeff2603, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -14237,6 +14257,11 @@ PrefabInstance:
       propertyPath: PickUpSound
       value: 
       objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: eatingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dab72260b2306146b4ec6acbeff2603, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip

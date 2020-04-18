@@ -435,8 +435,11 @@ MonoBehaviour:
   speed: 1000
   p: {fileID: 0}
   time: 1000
-  PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
   volume: 1
   alreadyPlayed: 0
+  wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+  wrongPlayed: 0
   daikon_active: {fileID: 0}
   daikon_used: {fileID: 0}
+  eatingSound: {fileID: 8300000, guid: 4dab72260b2306146b4ec6acbeff2603, type: 3}

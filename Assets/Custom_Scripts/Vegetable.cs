@@ -36,7 +36,10 @@ public class Vegetable : MonoBehaviour
     public GameObject daikon_used;
 
 
-    
+    public AudioClip eatingSound;
+    private bool eating_is_playing = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -132,6 +135,15 @@ public class Vegetable : MonoBehaviour
 
     IEnumerator countDown(NavMeshAgent temp)
     {
+        if(!eating_is_playing)
+        {
+            eating_is_playing = true;
+            Source.clip = eatingSound;
+            Source.loop = true;
+            Source.Play();
+            
+        }
+
         Debug.Log("Inside countdown");
 
         temp.speed = 0; 
@@ -139,6 +151,13 @@ public class Vegetable : MonoBehaviour
 
         Debug.Log("Counted 5 seconds");
         temp.speed = 4;
+
+        if(eating_is_playing)
+        {
+            Source.loop = false;
+            Source.Stop();
+            eating_is_playing = false; 
+        }
 
         Destroy(this.gameObject); 
     }
