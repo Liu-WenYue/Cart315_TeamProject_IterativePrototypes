@@ -35,15 +35,21 @@ public class Vegetable : MonoBehaviour
     public GameObject daikon_active;
     public GameObject daikon_used;
 
-
-    public AudioClip eatingSound;
+    public AudioSource EatSource; 
+    //public AudioClip eatingSound;
     private bool eating_is_playing = false;
+
+    //public AudioSource[] vege_array = new AudioSource[2]; 
 
 
     // Start is called before the first frame update
     void Start()
     {
         Source = GetComponent<AudioSource>(); 
+        //vege_array = this.GetComponents<AudioSource>(); 
+
+        //Source = vege_array[0]; //for bite sounds and wrong sounds
+        //EatSource = vege_array[1]; //sound for eating daikon 
     }
 
     // Update is called once per frame
@@ -138,9 +144,9 @@ public class Vegetable : MonoBehaviour
         if(!eating_is_playing)
         {
             eating_is_playing = true;
-            Source.clip = eatingSound;
-            Source.loop = true;
-            Source.Play();
+            EatSource.loop = true; 
+            EatSource.Play(); 
+            Debug.Log("Playing eating audio"); 
             
         }
 
@@ -154,8 +160,8 @@ public class Vegetable : MonoBehaviour
 
         if(eating_is_playing)
         {
-            Source.loop = false;
-            Source.Stop();
+            EatSource.loop = false;
+            EatSource.Stop(); 
             eating_is_playing = false; 
         }
 
@@ -179,8 +185,12 @@ public class Vegetable : MonoBehaviour
     {
 
         Debug.Log("Playing wrong audio");
+
         Source.clip = wrongSound;
-        Source.PlayOneShot(wrongSound);
+        Source.PlayOneShot(wrongSound); 
+        
+        //Source.clip = wrongSound;
+        //Source.PlayOneShot(wrongSound);
 
         //wrongPlayed = true;
         //AudioSource.PlayClipAtPoint(wrong, transform.position); 
