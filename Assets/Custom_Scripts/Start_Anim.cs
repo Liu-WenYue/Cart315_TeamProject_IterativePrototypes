@@ -8,6 +8,7 @@ public class Start_Anim : MonoBehaviour
 {
     public VideoPlayer vid;
     public GameObject videoRender;
+    public GameObject close;
 
 
     void Start() {
@@ -19,6 +20,10 @@ public class Start_Anim : MonoBehaviour
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         Debug.Log("Video Is Over");
+
+        close.SetActive(true);
+
+
         //vid.enabled = false;
         //videoRender.SetActive(false);
     }
