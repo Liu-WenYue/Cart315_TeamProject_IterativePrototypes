@@ -23,9 +23,6 @@ public class Start_Anim : MonoBehaviour
 
         close.SetActive(true);
 
-
-        //vid.enabled = false;
-        //videoRender.SetActive(false);
     }
 }
 
