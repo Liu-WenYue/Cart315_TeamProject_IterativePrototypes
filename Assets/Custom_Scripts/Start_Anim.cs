@@ -10,13 +10,17 @@ public class Start_Anim : MonoBehaviour
     public GameObject videoRender;
 
 
-    void Start() { vid.loopPointReached += CheckOver; }
+    void Start() {
+        vid.loopPointReached += CheckOver;
+        vid.frame = 0;
+    }
+
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         Debug.Log("Video Is Over");
-        vid.enabled = false;
-        videoRender.SetActive(false);
+        //vid.enabled = false;
+        //videoRender.SetActive(false);
     }
 }
 
