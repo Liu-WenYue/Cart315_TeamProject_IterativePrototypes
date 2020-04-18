@@ -480,6 +480,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_audioClip
@@ -825,6 +830,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -1199,6 +1209,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -3031,6 +3046,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_audioClip
@@ -3662,6 +3682,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -4115,6 +4140,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -7721,6 +7751,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_audioClip
@@ -8120,6 +8155,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_audioClip
@@ -8422,7 +8462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: low_healthSound
       value: 
-      objectReference: {fileID: 8300000, guid: 7547ba4d010da1e47a76e2b0b020b273, type: 3}
+      objectReference: {fileID: 8300000, guid: 7c9a232e27252514fbc9866a7c9d1eb1, type: 3}
     - target: {fileID: 4364229773313018241, guid: 541e8999d5496c34a805c17a47883a71,
         type: 3}
       propertyPath: potion_used
@@ -8984,7 +9024,7 @@ MonoBehaviour:
   p8: {fileID: 1480184040}
   p9: {fileID: 1480184039}
   p10: {fileID: 1480184038}
-  PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
   alreadyPlayed: 0
   wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
@@ -10974,7 +11014,7 @@ MonoBehaviour:
   p8: {fileID: 1770648771}
   p9: {fileID: 1770648770}
   p10: {fileID: 1770648769}
-  PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
   alreadyPlayed: 0
   wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
@@ -11257,7 +11297,7 @@ MonoBehaviour:
   p8: {fileID: 152501680}
   p9: {fileID: 1925100682}
   p10: {fileID: 988778622}
-  PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
   alreadyPlayed: 0
   wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
@@ -11528,7 +11568,7 @@ MonoBehaviour:
   p8: {fileID: 1789702595}
   p9: {fileID: 1789702594}
   p10: {fileID: 1789702593}
-  PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
   alreadyPlayed: 0
   wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
@@ -11987,6 +12027,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_audioClip
@@ -14029,7 +14074,7 @@ MonoBehaviour:
   p8: {fileID: 231940072}
   p9: {fileID: 1355115853}
   p10: {fileID: 770097414}
-  PickUpSound: {fileID: 8300000, guid: 359fb8d9c86a7c54f8dc9832f62e48a3, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
   alreadyPlayed: 0
   wrongSound: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
   shield_active: {fileID: 1220691269}
@@ -14187,6 +14232,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 15393311376151715, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 15393311376151717, guid: a7e567bae51de0d47b5fc5babd5e0c7e,
         type: 3}
       propertyPath: m_audioClip
@@ -14277,6 +14327,11 @@ PrefabInstance:
       propertyPath: wrongSound
       value: 
       objectReference: {fileID: 8300000, guid: c49772c661192d14a882cb984f800011, type: 3}
+    - target: {fileID: 7395739084276892554, guid: d382e5fe628bc754db9e7eab63c2450f,
+        type: 3}
+      propertyPath: PickUpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 255093f37f0f0ce42adf2fcfad387c5a, type: 3}
     - target: {fileID: 7395739084276892566, guid: d382e5fe628bc754db9e7eab63c2450f,
         type: 3}
       propertyPath: m_audioClip
